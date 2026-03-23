@@ -11,12 +11,13 @@ const errorCodeToStatus: Record<ErrorCode, ContentfulStatusCode> = {
 
 export function errorHandler(err: Error, c: Context) {
   if (err instanceof AppError) {
-    const status = errorCodeToStatus[err.code] ?? 500;
+    const appError = err as AppError;
+    const status = errorCodeToStatus[appError.code] ?? 500;
     return c.json(
       {
         error: {
-          code: err.code,
-          message: err.message,
+          code: appError.code,
+          message: appError.message,
         },
       },
       status,
