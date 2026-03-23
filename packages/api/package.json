@@ -7,12 +7,16 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch",
-    "test": "echo \"No tests yet\"",
+    "dev": "bun --watch src/index.ts",
+    "test": "bun test",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
   "dependencies": {
-    "@autotask/core": "*"
+    "@autotask/core": "*",
+    "hono": "^4.12.8"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.11"
   }
 }
