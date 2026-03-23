@@ -12,6 +12,9 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
   "devDependencies": {
     "vitest": "^4.1.0"
   }
