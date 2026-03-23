@@ -8,8 +8,11 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "echo \"No tests yet\"",
+    "test": "vitest run",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.0"
   }
 }
