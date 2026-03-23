@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { createApp } from "./app.js";
-import { AppError, ErrorCode, TaskNotFoundError } from "@autotask/core";
+import { ErrorCode, TaskNotFoundError } from "@autotask/core";
 
 const app = createApp();
 
