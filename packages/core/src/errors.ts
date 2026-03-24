@@ -6,6 +6,7 @@ export enum ErrorCode {
   TASK_EXECUTION_ERROR = "TASK_EXECUTION_ERROR",
   VALIDATION_ERROR = "VALIDATION_ERROR",
   SCHEDULE_ERROR = "SCHEDULE_ERROR",
+  QUEUE_ERROR = "QUEUE_ERROR",
 }
 
 /**
@@ -60,5 +61,15 @@ export class ScheduleError extends AppError {
     super(ErrorCode.SCHEDULE_ERROR, message, cause);
     this.name = "ScheduleError";
     this.expression = expression;
+  }
+}
+
+export class QueueError extends AppError {
+  public readonly jobId?: string;
+
+  constructor(message: string, jobId?: string, cause?: Error) {
+    super(ErrorCode.QUEUE_ERROR, message, cause);
+    this.name = "QueueError";
+    this.jobId = jobId;
   }
 }

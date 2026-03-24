@@ -5,6 +5,7 @@ export {
   TaskExecutionError,
   ValidationError,
   ScheduleError,
+  QueueError,
 } from "./errors.js";
 
 export { type Result, ok, err, isOk, isErr } from "./result.js";
@@ -23,3 +24,20 @@ export {
   type TaskRunStatus,
   parseTaskRun,
 } from "./schemas/index.js";
+
+export {
+  type RedisConfig,
+  getRedisConfig,
+  toConnectionOptions,
+  QueueJobDataSchema,
+  type QueueJobData,
+  parseJobData,
+  QueueJobResultSchema,
+  type QueueJobResult,
+  TaskQueue,
+  type TaskQueueEvent,
+  type TaskQueueEventType,
+  type TaskQueueEventHandler,
+  type TaskQueueStatus,
+  type TaskQueueOptions,
+} from "./queue/index.js";
