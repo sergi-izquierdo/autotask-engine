@@ -3,6 +3,7 @@
  */
 export enum ErrorCode {
   TASK_NOT_FOUND = "TASK_NOT_FOUND",
+  RUN_NOT_FOUND = "RUN_NOT_FOUND",
   TASK_EXECUTION_ERROR = "TASK_EXECUTION_ERROR",
   VALIDATION_ERROR = "VALIDATION_ERROR",
   SCHEDULE_ERROR = "SCHEDULE_ERROR",
@@ -50,6 +51,16 @@ export class ValidationError extends AppError {
     super(ErrorCode.VALIDATION_ERROR, message, cause);
     this.name = "ValidationError";
     this.field = field;
+  }
+}
+
+export class RunNotFoundError extends AppError {
+  public readonly runId: string;
+
+  constructor(runId: string, cause?: Error) {
+    super(ErrorCode.RUN_NOT_FOUND, `Run not found: ${runId}`, cause);
+    this.name = "RunNotFoundError";
+    this.runId = runId;
   }
 }
 

@@ -2,6 +2,7 @@ export {
   ErrorCode,
   AppError,
   TaskNotFoundError,
+  RunNotFoundError,
   TaskExecutionError,
   ValidationError,
   ScheduleError,

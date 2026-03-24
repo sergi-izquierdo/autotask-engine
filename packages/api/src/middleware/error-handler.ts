@@ -4,6 +4,7 @@ import { AppError, ErrorCode } from "@autotask/core";
 
 const errorCodeToStatus: Record<ErrorCode, ContentfulStatusCode> = {
   [ErrorCode.TASK_NOT_FOUND]: 404,
+  [ErrorCode.RUN_NOT_FOUND]: 404,
   [ErrorCode.VALIDATION_ERROR]: 400,
   [ErrorCode.TASK_EXECUTION_ERROR]: 500,
   [ErrorCode.SCHEDULE_ERROR]: 400,
