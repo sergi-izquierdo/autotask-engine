@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "bun --watch src/index.ts",
-    "test": "bun test",
+    "test": "bun test src/",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
