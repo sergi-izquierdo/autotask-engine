@@ -8,11 +8,18 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "echo \"No tests yet\"",
+    "test": "vitest run",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
   "dependencies": {
-    "@autotask/core": "*"
+    "@autotask/core": "*",
+    "@hono/node-server": "^1.19.11",
+    "bullmq": "^5.71.0",
+    "cron-parser": "^5.5.0",
+    "hono": "^4.12.9"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.1"
   }
 }
