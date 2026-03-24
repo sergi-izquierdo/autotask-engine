@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { LayoutDashboard, ListTodo, Settings, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ConnectionStatus } from "@/components/connection-status";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
@@ -44,7 +45,8 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="border-t border-sidebar-border p-3">
+      <div className="space-y-2 border-t border-sidebar-border p-3">
+        <ConnectionStatus />
         <ThemeToggle />
       </div>
     </aside>
