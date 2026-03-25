@@ -1,8 +1,10 @@
 import { describe, expect, test } from "bun:test";
+import { createBunWebSocket } from "hono/bun";
 import { createApp } from "./app.js";
 import { ErrorCode, TaskNotFoundError } from "@autotask/core";
 
-const app = createApp();
+const { upgradeWebSocket } = createBunWebSocket();
+const { app } = createApp({ upgradeWebSocket });
 
 describe("Health check", () => {
   test("GET /health returns 200 with ok status", async () => {
@@ -14,7 +16,7 @@ describe("Health check", () => {
 
 describe("Error handling", () => {
   test("AppError is mapped to proper HTTP response", async () => {
-    const testApp = createApp();
+    const { app: testApp } = createApp({ upgradeWebSocket });
     testApp.get("/test-error", () => {
       throw new TaskNotFoundError("task-123");
     });
@@ -27,7 +29,7 @@ describe("Error handling", () => {
   });
 
   test("Unknown errors return 500", async () => {
-    const testApp = createApp();
+    const { app: testApp } = createApp({ upgradeWebSocket });
     testApp.get("/test-unknown-error", () => {
       throw new Error("something broke");
     });
