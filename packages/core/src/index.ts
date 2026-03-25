@@ -23,3 +23,12 @@ export {
   type TaskRunStatus,
   parseTaskRun,
 } from "./schemas/index.js";
+
+export { type TaskRunRepository } from "./task-run-repository.js";
+
+export {
+  TaskExecutor,
+  type TaskHandler,
+  type TaskExecutorOptions,
+  type TaskExecutorEvents,
+} from "./task-executor.js";
